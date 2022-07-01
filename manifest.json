@@ -2,6 +2,9 @@
     "name": "CP calendar",
     "version": "0.0.0.1",
     "manifest_version": 3,
+    "permissions": [
+        "activeTab"
+    ],
     "description": "An extension to display the dates of coding contests at some major platforms",
     "action": {
         "default_popup": "index.html"
