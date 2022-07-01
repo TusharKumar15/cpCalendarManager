@@ -4,7 +4,7 @@ html {
 
 body {
     width: 400px;
-    background-color: #fdf4e9;
+    /* background-color: #fdf4e9; */
 }
 
 #welcome {
@@ -18,6 +18,20 @@ body {
 
 #intro {
     color: grey;
+}
+
+#hid_unhid {
+    background-color: #f5cfa0;
+    padding: 4px;
+    padding-left: 75px;
+    border-radius: 16px;
+    color: #575757;
+    transition: transform 0.5s ease;
+}
+
+#hid_unhid:hover {
+    cursor: pointer;
+    transform: scale(1.02);
 }
 
 #calendar {
@@ -58,11 +72,11 @@ body {
     margin: 10px;
     color: white;
     font-weight: 600;
-    transition: transform .5s ease;
+    transition: transform 0.5s ease;
 }
 
 .listItem:hover {
     cursor: pointer;
-    zoom: 110%;
-    transform: scale(1.01);
+    /* zoom: 110%; */
+    transform: scale(1.02);
 }

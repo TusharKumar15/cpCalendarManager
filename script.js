@@ -1,3 +1,40 @@
+var elmContainer = document.getElementById("show");
+
+elmContainer.style.display = "none";
+document.getElementById("hid_unhid").onclick = (() => {
+    console.log(elmContainer.style.display);
+    if(elmContainer.style.display === "none") elmContainer.style.display = "contents";
+    else elmContainer.style.display = "none";
+});
+
+
+const pltfrms = ["codeforces", "codechef", "hacker rank", "hackerearth", "leetcode", "Kick start", "top code", "at coder", "cs academy"];
+
+
+for(var i = 0; i < pltfrms.length; i++){
+    var elm = document.createElement("input");
+    elm.type = "checkbox";
+    var elmbox = elmContainer.appendChild(elm)
+    elmbox.id = "check"+i;
+    elmbox.onchange = (() => {
+        var elmboxT = elmbox;
+        return () => {
+            localStorageManager(elmboxT);
+            
+        }
+    })();
+    if(localStorage[elmbox.id] === '1') elmbox.checked = true;
+    var elmTxt = document.createElement("span");
+    elmContainer.appendChild(elmTxt).innerHTML = pltfrms[i];
+}
+
+function localStorageManager(elm){
+    console.log(elm.checked);
+    if(elm.checked) localStorage[elm.id] = '1';
+    else localStorage[elm.id] = '0';
+}
+
+
 var d = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
 var today = new Date();
@@ -49,12 +86,16 @@ function renderList(setDate){
     const url = [
                     "https://kontests.net/api/v1/codeforces", 
                     "https://kontests.net/api/v1/code_chef",
-                    "https://kontests.net/api/v1/kick_start",
-                    "https://kontests.net/api/v1/leet_code",
                     "https://kontests.net/api/v1/hacker_rank",
-                    "https://kontests.net/api/v1/hacker_earth"
+                    "https://kontests.net/api/v1/hacker_earth",
+                    "https://kontests.net/api/v1/leet_code",
+                    "https://kontests.net/api/v1/kick_start",
+                    "https://kontests.net/api/v1/top_coder",
+                    "https://kontests.net/api/v1/at_coder",
+                    "https://kontests.net/api/v1/cs_academy"
                 ]
     for(var i = 0; i < url.length; i++){
+        if(!document.getElementById("check"+i).checked) continue;
         getList(keyStr, url[i]).then((list) => {
             for(var j = 0; j < list.length; j++){
                 createListItem(lst, list[j]);
@@ -103,4 +144,4 @@ function createListItem(lst, ob){
 }
 
 
-
+// platform choose
