@@ -1,3 +1,68 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     width: 400px;
+    background-color: #fdf4e9;
+}
+
+#welcome {
+    padding: 5px;
+    padding-left: 100px;
+    background-color: #bfbdbd;
+    color: white;
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px rgb(206, 206, 206);
+}
+
+#intro {
+    color: grey;
+}
+
+#calendar {
+    padding-left: 55px;
+    padding-bottom: 10px;
+}
+
+.calendar_head {
+    width: 35px;
+    background-color: rgb(245, 207, 160);
+    color: rgb(87, 87, 87);
+    border-radius: 2px;
+}
+
+.calendar_box {
+    background-color: bisque;
+    padding-left: 10px;
+    color: rgb(100, 100, 100);
+    border-radius: 2px;
+}
+
+.calendar_box:hover {
+    cursor: pointer;
+    background-color: rgb(254, 214, 165);
+}
+
+#list{
+    font-size: 15px;
+    margin-bottom: 50px;
+}
+
+.listItem {
+    background-color: rgb(192, 190, 190);
+    border-radius: 2px;
+    box-shadow: 2px 2px 4px rgb(206, 206, 206);
+    padding: 5px;
+    padding-left: 10px;
+    margin: 10px;
+    color: white;
+    font-weight: 600;
+    transition: transform .5s ease;
+}
+
+.listItem:hover {
+    cursor: pointer;
+    zoom: 110%;
+    transform: scale(1.01);
 }
